@@ -5,7 +5,7 @@ toast插件
 ```Javascript
 var myToast = new MyToast({
 	message: "Toast提示框",
-	time: 2000
+	time: 3000
 );
 myToast.show();
 ```
