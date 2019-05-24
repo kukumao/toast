@@ -9,7 +9,18 @@
 	"use strict"
 
 	var _global;
-
+	/*工具函数 -start*/
+	// 对象合并
+	function extend(o, n, override) {
+		for(var key in n) {
+			if(n.hasOwnProperty(key) && (!o.hasOwnProperty(key) || override)) {
+				o[key] = n[key];
+			}
+		}
+		return o;
+	}
+	/*工具函数 -end*/
+	
 	// 插件构造函数 - 返回数组结构
 	function MyToast(opt) {
 		this._initial(opt);
@@ -23,7 +34,7 @@
 				time: 1500
 			};
 			//配置参数
-			this.def = Object.assign(def, opt);
+			this.def = extend(def, opt, true);
 		},
 		show: function() {
 			// toast停留时间

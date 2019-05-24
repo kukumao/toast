@@ -6,6 +6,6 @@ toast插件
 var myToast = new MyToast({
 	message: "Toast提示框",
 	time: 3000
-);
+});
 myToast.show();
 ```
